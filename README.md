@@ -1,19 +1,6 @@
-# vue-app
+//[图片名称](图片相对路径)
+- ![1.png](1.png)
+- ![2.png](1.png)
+- ![3.png](1.png)
+- ![4.png](1.png)
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
