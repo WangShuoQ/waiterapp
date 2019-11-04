@@ -15,10 +15,9 @@
         <div  v-if='data.address'>联系方式：{{data.address.telephone}}</div>  
       </van-col>
       <van-col :offset="9">
-      <van-button type="primary" size="small" @click="completeHandler">完成订单</van-button>
-      <van-button type="warning" size="small" @click="fillHandler">失败报错</van-button>
+        <van-button plain hairline type="info" size="small" @click="tc">订单完成</van-button>
+        <van-button plain hairline type="danger" size="small" @click="sb">失败报错</van-button>
       </van-col>
-
     </van-row>
     <div class="text-right">
       合计￥ {{data.total}}
@@ -26,21 +25,30 @@
   </div>
 </template>
 <script>
+import { Dialog } from 'vant';
 export default {
    data() {
     return {
       active: 0,
-      data:{type:Object}
     }
   },
+  props:{
+    data:{type:Object}
+  },
   methods:{
-    completeHandler (){
-      console.log(data.status)
-      alert(订单已完成)
+   tc() {
+      Dialog.alert({
+      message: '该订单已完成'
+      }).then(() => {
+      // on close
+      })
     },
-     fillHandler (){
-      console.log(data.status)
-      alert(订单完成失败)
+     sb() {
+      Dialog.alert({
+      message: '失败报错成功'
+      }).then(() => {
+      // on close
+      })
     }
   }
 }

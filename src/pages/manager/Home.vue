@@ -98,6 +98,13 @@ export default {
    components: {
     [Dialog.Component.name]: Dialog.Component
   },
+  created(){
+    let obj = this.info(this.token)
+  },
+  computed:{
+    ...mapState("user",["token"]),
+
+  },
    data() {
     return {
       isLoading: false,
@@ -105,6 +112,7 @@ export default {
     }
   },
   methods: {
+    ...mapActions("user",["info"]),
     tc() {
       Dialog.alert({
       message: '该订单已完成'

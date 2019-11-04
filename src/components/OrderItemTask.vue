@@ -15,8 +15,8 @@
         <div  v-if='data.address'>联系方式：{{data.address.telephone}}</div>  
       </van-col>
       <van-col :offset="9">
-      <van-button type="primary" size="small" @click="acceptHandler">承接订单</van-button>
-      <van-button type="warning" size="small" @click="giveupHandler">放弃此单</van-button>
+      <van-button type="primary" size="small" @click="tc">承接订单</van-button>
+      <van-button type="warning" size="small" @click="sb">放弃此单</van-button>
       </van-col>
 
     </van-row>
@@ -31,13 +31,19 @@ export default {
     data:{type:Object}
   },
   methods:{
-    acceptHandler (){
-      console.log(data.status)
-      alert(接单成功)
+   tc() {
+      Dialog.alert({
+      message: '接单成功'
+      }).then(() => {
+      // on close
+      })
     },
-    giveupHandler (){
-      console.log(data.status)
-      alert(拒接此单)
+     sb() {
+      Dialog.alert({
+      message: '已放弃此单'
+      }).then(() => {
+      // on close
+      })
     }
   }
 }
